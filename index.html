@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at 20% 20%, #6366f1 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #a855f7 0%, transparent 35%),
+        linear-gradient(135deg, #0f172a, #1e1b4b);
+    }
+
+    /* Decorative background circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: 0.25;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .circle.one {
+      width: 180px;
+      height: 180px;
+      background: #818cf8;
+      top: 10%;
+      left: 10%;
+    }
+
+    .circle.two {
+      width: 250px;
+      height: 250px;
+      background: #c084fc;
+      bottom: -50px;
+      right: 8%;
+      animation-delay: -3s;
+    }
+
+    /* Main card */
+    .card {
+      position: relative;
+      z-index: 2;
+      width: min(90%, 650px);
+      padding: 70px 50px;
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 28px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+
+      animation: appear 1s ease-out;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      border-radius: 50px;
+
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #c4b5fd;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 10vw, 6rem);
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -4px;
+
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #c4b5fd,
+        #f0abfc
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+      margin-bottom: 24px;
+    }
+
+    p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 12px;
+
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+
+      transition: transform 0.25s ease,
+                  box-shadow 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(168, 85, 247, 0.45);
+    }
+
+    .footer {
+      margin-top: 35px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+
+      50% {
+        transform: translateY(-30px) translateX(15px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 50px 25px;
+        border-radius: 22px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="circle one"></div>
+  <div class="circle two"></div>
+
+  <main class="card">
+    <span class="tag">Welcome</span>
+
+    <h1>Hello World</h1>
+
+    <p>
+      A simple beginning to something beautiful.
+      Clean, modern, and ready for your next idea.
+    </p>
+
+    <a href="#" class="button">Get Started →</a>
+
+    <div class="footer">
+      Crafted with HTML & CSS
+    </div>
+  </main>
+
+</body>
+</html>
